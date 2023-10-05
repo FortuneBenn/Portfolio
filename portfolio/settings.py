@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-ixw4$bq^0#cbz-=08yrdmdl+!0*#hpw3%3+d02*$7c)y%mc@x7
 DEBUG = True
 
 ALLOWED_HOSTS = ['fortuneben-f7314a61ad9e.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://fortuneben-f7314a61ad9e.herokuapp.com']
 
 
 # Application definition
