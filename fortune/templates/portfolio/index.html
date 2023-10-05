@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!-- =============== CSS =============== -->
+        <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+
+        <title>{{ details.firstname }} {{details.middlename}} {{ details.surname }}</title>
+
+        <!-- =============== FAVICON =============== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+              </div>  
+            <nav class="nav container">
+                <a href="#" class="nav__logo"> Fortune Benn Madonzela </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About Me</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'projects-page' %}" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Me</a>
+                        </li>
+
+                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+                <a href="{% url 'projects-page' %}" class="button button__header">Projects</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--=============== HOME ===============-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <img src="{% static 'assets/img/mypic.jpeg' %}" alt="Company Logo">
+                    
+
+                    <div class="home__data">
+                        <h2 class="home__title">Fortune Benn Madonzela</h2>
+                        <p class="home__description">Currently studying part time at University Of Mpumalanga in Nelspruit(Mbombela Campus)</p>
+
+                        <a href="projects.html" class="button">Projects</a>
+
+                    </div>   
+                </div>
+            </section>
+
+            <!--=============== ABOUT ===============-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <div class="about__data">
+                        <h2 class="section__title-center">Find Out A Little More <br> About Me</h2> <br>
+                        <p class="about__description">Fortune Benn Madonzela, a dedicated UI developer with a flair for creativity and innovation. With experience and a knack for mobile app and Django development, I'm committed to crafting seamless user experiences that captivate and engage.
+                        </p>
+                        <a href="{% url 'resume-page' %}" class="button button__header">More AboutMe</a>
+                    </div>
+
+                        <img src="{% static 'assets/img/mypic2.jpeg' %}" alt="Company Logo">
+                </div>
+            </section>
+
+           
+           
+
+            <!--=============== CONTACT ME ===============-->
+            <section class="contact section container" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__content">
+                        <h2 class="section__title-center">Contact Me From <br> Here</h2> <br>
+                        <p class="contact__description">Please feel free to contact me here to schedule a conversation.</p>
+                    </div>
+
+                    <ul class="contact__content grid">
+                        <li class="contact__address">Cellphone: <span class="contact__information">071 - 543 - 5386</span></li>
+                        <li class="contact__address">Email:  <span class="contact__information">fortuneben69@gmail.com</span></li>
+                        <li class="contact__address">Location: <span class="contact__information">Mbombela - Mpumalanga</span></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!--=============== FOOTER ===============-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Skills</h3>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">HTML5 </a></li>
+                        <li><a href="#" class="footer__link">CSS3 </a></li>
+                        <li><a href="#" class="footer__link">Bootstrap</a></li>
+                        <li><a href="#" class="footer__link">JavaScript</a></li>
+                        <li><a href="#" class="footer__link">Java</a></li>
+                        <li><a href="#" class="footer__link">Kotlin</a></li>
+                        <li><a href="#" class="footer__link">Angular JS</a></li>
+                        <li><a href="#" class="footer__link">React Native</a></li>
+                        <li><a href="#" class="footer__link">Django, PHP</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Companies I word for</h3>
+                    <ul class="footer__links">
+                        <li><a href="https://www.internshipsuccess.co.za/" class="footer__link">Internship Success</a></li>
+                    </ul>
+                </div>
+
+                
+
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/ben.madonzela.5/" class="footer__social-link"><i class='bx bxl-facebook-circle '></i></a>
+                    <a href="https://github.com/FortuneBenn" class="footer__social-link"><i class='bx bxl-github'></i></a>
+                    <a href="https://instagram.com/fortune_ben99?igshid=MmIzYWVlNDQ5Yg==" class="footer__social-link"><i class='bx bxl-instagram-alt'></i></a>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; Madonzela Fortune. All right reserved</p>
+        </footer>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
+        <!--=============== MAIN JS ===============-->
+        
+        
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>

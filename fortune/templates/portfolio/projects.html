@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!-- =============== CSS =============== -->
+        <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/index.css' %}" rel="stylesheet">
+
+        <title>Endless Navs</title>
+</head>
+<body>
+
+<!--=============== HEADER ===============-->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="{% url 'home-page' %}" class="nav__logo"> {{ details.firstname }} {{ details.middlename }} {{ details.surname }} </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="{% url 'home-page' %}" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{% url 'resume-page' %}" class="nav__link">About Me</a>
+                </li>
+                <li class="nav__item">
+                    <a href="index.html#contact" class="nav__link">Contact us</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+
+        <a href="https://github.com/pulkithanda" class="button button__header">Drop a follow</a>
+    </nav>
+</header><br><br><br><br><br><br>
+{% for project_number, project in project_list %}
+<div class="product">
+    <div class="product-img">
+        <img src="{{ project.gif.url }}" alt="{{ project.title }} GIF">
+        <span class="tag">Project {{ project_number }}</span>
+    </div>
+    <div class="product-listing" >
+        <div class="content">
+            <h3 class="name">{{ project.title }}</h3>
+            <p class="info">{{ project.description }}</p>
+            <p class="stack">Tech stack :{{ project.stack }}</p>
+            <div class="btn-and-rating-box">
+                
+                <a class="btn" href="https://codepen.io/ainalem/pen/OJWQbor" target="_blank">See Code</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endfor %}
+
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>
